@@ -1,0 +1,13 @@
+services:
+  falkordb:
+    image: docker.io/falkordb/falkordb@sha256:d998ed0dfd91da6208f257dfd61f5330335bd6e7006cfc0fd1ddd761269e2634
+    container_name: relayops-falkordb
+    ports:
+      - "6387:6379"
+    volumes:
+      - relayops-falkordb-data:/data
+    restart: unless-stopped
+
+volumes:
+  relayops-falkordb-data:
+    name: relayops-falkordb-data

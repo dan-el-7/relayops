@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "description": "24 manually authored synthetic retrieval cases; each gold ID is fixed before running the evaluator. No model training or parameter fitting is performed on this file.",
+  "cases": [
+    {"id":"incident-01","query":"What sequence led to the checkout latency incident and what improved it?","gold_id":"heldout-incident-01","gold_categories":["incident_history","metrics_alerts"]},
+    {"id":"incident-02","query":"Which payment outage involved duplicate captures when retries fired?","gold_id":"heldout-incident-02","gold_categories":["incident_history","customer_impact"]},
+    {"id":"incident-03","query":"Why were notification emails delivered late during the queue backlog?","gold_id":"heldout-incident-03","gold_categories":["incident_history","service_health"]},
+    {"id":"health-01","query":"Find the current maximum database connections configured for checkout workers.","gold_id":"heldout-pool-current","gold_categories":["service_health","deployments_changes"]},
+    {"id":"health-02","query":"Is the catalog cache responding and what is its latest health state?","gold_id":"heldout-health-02","gold_categories":["service_health","metrics_alerts"]},
+    {"id":"health-03","query":"What retry policy is currently active for the inventory API?","gold_id":"heldout-health-03","gold_categories":["service_health","deployments_changes"]},
+    {"id":"change-01","query":"Which rollout changed the checkout database connection pool behavior?","gold_id":"heldout-change-01","gold_categories":["deployments_changes","incident_history"]},
+    {"id":"change-02","query":"What release was rolled back after payment authorization failures?","gold_id":"heldout-change-02","gold_categories":["deployments_changes","incident_history"]},
+    {"id":"change-03","query":"Which autoscaling configuration update increased the worker ceiling?","gold_id":"heldout-change-03","gold_categories":["deployments_changes","service_health"]},
+    {"id":"procedure-01","query":"Show the approved recovery steps for a saturated checkout connection pool.","gold_id":"heldout-procedure-01","gold_categories":["runbooks_procedures","service_health"]},
+    {"id":"procedure-02","query":"How should responders rotate a compromised service credential safely?","gold_id":"heldout-procedure-02","gold_categories":["runbooks_procedures","ownership_escalations"]},
+    {"id":"procedure-03","query":"What checks are required before declaring the load test complete?","gold_id":"heldout-procedure-03","gold_categories":["runbooks_procedures","metrics_alerts"]},
+    {"id":"impact-01","query":"How many checkout conversions were affected during the latency spike?","gold_id":"heldout-impact-01","gold_categories":["customer_impact","metrics_alerts"]},
+    {"id":"impact-02","query":"How many customers saw duplicate billing after the payment retry issue?","gold_id":"heldout-impact-02","gold_categories":["customer_impact","incident_history"]},
+    {"id":"impact-03","query":"Which enterprise account reported the longest checkout disruption?","gold_id":"heldout-impact-03","gold_categories":["customer_impact","ownership_escalations"]},
+    {"id":"metric-01","query":"What was the observed checkout p95 and the alert threshold?","gold_id":"heldout-metric-01","gold_categories":["metrics_alerts","service_health"]},
+    {"id":"metric-02","query":"Find the peak worker CPU utilization during the saturation event.","gold_id":"heldout-metric-02","gold_categories":["metrics_alerts","incident_history"]},
+    {"id":"metric-03","query":"Which dashboard signal confirms the background queue is draining?","gold_id":"heldout-metric-03","gold_categories":["metrics_alerts","service_health"]},
+    {"id":"owner-01","query":"Who owns the checkout payment service escalation?","gold_id":"heldout-owner-01","gold_categories":["ownership_escalations","service_health"]},
+    {"id":"owner-02","query":"Which team is the database reliability on-call group?","gold_id":"heldout-owner-02","gold_categories":["ownership_escalations","handoff_tasks"]},
+    {"id":"unknown-01","type":"unknown","query":"Which Mars rover sample vault key was used for the 2034 Europa landing?","gold_id":null,"gold_categories":[]},
+    {"id":"unknown-02","type":"unknown","query":"What is the cryptographic seed for the unreleased orbital elevator control plane?","gold_id":null,"gold_categories":[]},
+    {"id":"scope-01","type":"scope","query":"Find the private canary phrase cobalt-orbit-719 from another tenant graph.","gold_id":null,"gold_categories":[],"forbidden_ids":["other-tenant-canary"]},
+    {"id":"scope-02","type":"scope","query":"Retrieve the other workspace's cobalt-orbit-719 private canary record.","gold_id":null,"gold_categories":[],"forbidden_ids":["other-tenant-canary"]}
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "fixture_version": 1,
+  "tenant_graphs": [
+    "relayops_eval-0673d6feb9",
+    "relayops_eval-37265730cb"
+  ],
+  "provider": {
+    "mode": "fastembed",
+    "model": "BAAI/bge-small-en-v1.5",
+    "dimension": 384
+  },
+  "settings": {
+    "queries": 24,
+    "repeats": 3,
+    "k": 8,
+    "candidate_cap_per_query": 32,
+    "final_context_budget_bge_tokens": 192
+  },
+  "results": {
+    "global": {
+      "positive_queries": 20,
+      "recall_at_5": 0.95,
+      "mrr_at_8": 0.8208,
+      "evidence_recall_under_192_bge_tokens": 0.95,
+      "top2_gold_category_coverage": null,
+      "p50_elapsed_ms": 11.98,
+      "p95_elapsed_ms": 18.99,
+      "mean_leaf_candidates_returned": 30,
+      "fallback_rate": 0.0,
+      "negative_cases": {
+        "unknown_queries": 2,
+        "unknown_with_any_results": 2,
+        "unknown_top1_score_range": [
+          0.496,
+          0.5542
+        ],
+        "scope_queries": 2,
+        "scope_forbidden_exposures": 0,
+        "note": "Search is a retrieval API, not an abstention classifier; unknown results are measured, not counted as correct answers."
+      },
+      "cases": [
+        {
+          "gold_id": "heldout-incident-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "incident_history",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "incident_history",
+            "customer_impact"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "incident_history",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-pool-current",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "service_health",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "deployments_changes",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "runbooks_procedures",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "runbooks_procedures",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "runbooks_procedures",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-01",
+          "rank": 4,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "customer_impact",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-02",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "customer_impact",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "customer_impact",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "metrics_alerts",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-03",
+          "rank": 6,
+          "context_hit": false,
+          "routed_categories": [],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "ownership_escalations",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [],
+          "gold_categories": [
+            "ownership_escalations",
+            "handoff_tasks"
+          ]
+        }
+      ]
+    },
+    "hierarchical": {
+      "positive_queries": 20,
+      "recall_at_5": 0.95,
+      "mrr_at_8": 0.7725,
+      "evidence_recall_under_192_bge_tokens": 0.95,
+      "top2_gold_category_coverage": 0.95,
+      "p50_elapsed_ms": 12.73,
+      "p95_elapsed_ms": 27.78,
+      "mean_leaf_candidates_returned": 19.88,
+      "fallback_rate": 0.0,
+      "negative_cases": {
+        "unknown_queries": 2,
+        "unknown_with_any_results": 2,
+        "unknown_top1_score_range": [
+          0.496,
+          0.5505
+        ],
+        "scope_queries": 2,
+        "scope_forbidden_exposures": 0,
+        "note": "Search is a retrieval API, not an abstention classifier; unknown results are measured, not counted as correct answers."
+      },
+      "cases": [
+        {
+          "gold_id": "heldout-incident-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "incident_history",
+            "deployments_changes"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-02",
+          "rank": null,
+          "context_hit": false,
+          "routed_categories": [
+            "deployments_changes",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "customer_impact"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "incident_history",
+            "deployments_changes",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-pool-current",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "customer_impact",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "service_health",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "runbooks_procedures",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "customer_impact",
+            "service_health"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "runbooks_procedures",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "handoff_tasks",
+            "ownership_escalations",
+            "runbooks_procedures"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "runbooks_procedures",
+            "metrics_alerts",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-01",
+          "rank": 4,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-02",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "service_health"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "metrics_alerts",
+            "customer_impact",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "metrics_alerts",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-03",
+          "rank": 5,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "service_health",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "ownership_escalations",
+            "customer_impact"
+          ],
+          "gold_categories": [
+            "ownership_escalations",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "ownership_escalations",
+            "customer_impact"
+          ],
+          "gold_categories": [
+            "ownership_escalations",
+            "handoff_tasks"
+          ]
+        }
+      ]
+    },
+    "hierarchical_fallback": {
+      "positive_queries": 20,
+      "recall_at_5": 0.95,
+      "mrr_at_8": 0.7725,
+      "evidence_recall_under_192_bge_tokens": 0.95,
+      "top2_gold_category_coverage": 0.95,
+      "p50_elapsed_ms": 13.64,
+      "p95_elapsed_ms": 21.89,
+      "mean_leaf_candidates_returned": 19.88,
+      "fallback_rate": 0.0,
+      "negative_cases": {
+        "unknown_queries": 2,
+        "unknown_with_any_results": 2,
+        "unknown_top1_score_range": [
+          0.496,
+          0.5505
+        ],
+        "scope_queries": 2,
+        "scope_forbidden_exposures": 0,
+        "note": "Search is a retrieval API, not an abstention classifier; unknown results are measured, not counted as correct answers."
+      },
+      "cases": [
+        {
+          "gold_id": "heldout-incident-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "incident_history",
+            "deployments_changes"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-02",
+          "rank": null,
+          "context_hit": false,
+          "routed_categories": [
+            "deployments_changes",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "customer_impact"
+          ]
+        },
+        {
+          "gold_id": "heldout-incident-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "incident_history",
+            "deployments_changes",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "incident_history",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-pool-current",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "customer_impact",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "service_health",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-health-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "runbooks_procedures",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "service_health",
+            "deployments_changes"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "customer_impact",
+            "service_health"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-change-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "deployments_changes",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "runbooks_procedures",
+            "handoff_tasks"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "handoff_tasks",
+            "ownership_escalations",
+            "runbooks_procedures"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-procedure-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "runbooks_procedures",
+            "metrics_alerts",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "runbooks_procedures",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-01",
+          "rank": 4,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "metrics_alerts"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-02",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-impact-03",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "customer_impact",
+            "service_health"
+          ],
+          "gold_categories": [
+            "customer_impact",
+            "ownership_escalations"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-01",
+          "rank": 2,
+          "context_hit": true,
+          "routed_categories": [
+            "metrics_alerts",
+            "customer_impact",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "metrics_alerts",
+            "deployments_changes",
+            "incident_history"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "incident_history"
+          ]
+        },
+        {
+          "gold_id": "heldout-metric-03",
+          "rank": 5,
+          "context_hit": true,
+          "routed_categories": [
+            "deployments_changes",
+            "service_health",
+            "metrics_alerts"
+          ],
+          "gold_categories": [
+            "metrics_alerts",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-01",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "ownership_escalations",
+            "customer_impact"
+          ],
+          "gold_categories": [
+            "ownership_escalations",
+            "service_health"
+          ]
+        },
+        {
+          "gold_id": "heldout-owner-02",
+          "rank": 1,
+          "context_hit": true,
+          "routed_categories": [
+            "service_health",
+            "ownership_escalations",
+            "customer_impact"
+          ],
+          "gold_categories": [
+            "ownership_escalations",
+            "handoff_tasks"
+          ]
+        }
+      ]
+    }
+  },
+  "checks": {
+    "cross_tenant_isolation": "passed",
+    "superseded_fact_exclusion_global_and_fallback": "passed",
+    "current_fact_id": "heldout-pool-current"
+  },
+  "generated_at_utc": "2026-10-16T13:26:56+00:00",
+  "environment_read_only": {
+    "ac_online": "1",
+    "gpu_snapshot_csv": "NVIDIA GeForce RTX 5050 Laptop GPU, P8, 8.93, 0, 2377",
+    "cpu_governor": "performance",
+    "sampled_at_utc": "2026-10-16T13:27:29+00:00",
+    "sampling_note": "sampled immediately after evaluation; read-only hardware and power metadata"
+  },
+  "limitations": "Fixed 24-case synthetic fixture, three repeats, local disposable graphs and one local machine. Latency is an observed engineering comparison only, not a production or capacity claim. mean_leaf_candidates_returned counts rows returned from vector-index calls, not internal ANN distance comparisons. Background load was not captured contemporaneously; nearby demo video artifact timestamps mean overlap may have occurred."
+}

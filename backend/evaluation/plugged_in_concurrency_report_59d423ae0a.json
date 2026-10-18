@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "run_id": "59d423ae0a",
+  "generated_at_utc": "2026-10-16T13:24:52+00:00",
+  "classification": "bounded synthetic engineering smoke benchmark; not a production capacity claim",
+  "protocol": {
+    "max_concurrency": 8,
+    "read_requests": 24,
+    "episode_write_requests": 12,
+    "atomic_claim_racers": 8,
+    "claim_expected_version": 0,
+    "tenant_graphs": [
+      "relayops_bench_59d423ae0a",
+      "relayops_benchiso_59d423ae0a"
+    ],
+    "workload": "FastEmbed vector search and synthetic episode creation in parallel; claim race on one seeded disposable task"
+  },
+  "environment": {
+    "ac_online": "1",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+      "pstate": "P8",
+      "power_draw_w": "8.78",
+      "utilization_gpu_percent": "0",
+      "memory_used_mib": "1202"
+    },
+    "cpu_governor": "performance",
+    "embedding": {
+      "mode": "fastembed",
+      "model": "BAAI/bge-small-en-v1.5",
+      "dimension": 384
+    }
+  },
+  "results": {
+    "reads": {
+      "requests": 24,
+      "successes": 24,
+      "errors": 0,
+      "error_samples": [],
+      "p50_ms": 47.53,
+      "p95_ms": 77.56,
+      "max_ms": 84.23,
+      "elapsed_s": 0.217,
+      "successful_ops_per_s": 110.46
+    },
+    "episode_writes": {
+      "requests": 12,
+      "successes": 12,
+      "errors": 0,
+      "error_samples": [],
+      "p50_ms": 29.22,
+      "p95_ms": 50.51,
+      "max_ms": 54.13,
+      "elapsed_s": 0.217,
+      "successful_ops_per_s": 55.23
+    },
+    "atomic_claims": {
+      "requests": 8,
+      "successes": 1,
+      "errors": 7,
+      "error_samples": [
+        "ValueError: Task not found or state changed; refresh and retry",
+        "ValueError: Task not found or state changed; refresh and retry",
+        "ValueError: Task not found or state changed; refresh and retry",
+        "ValueError: Task not found or state changed; refresh and retry",
+        "ValueError: Task not found or state changed; refresh and retry"
+      ],
+      "p50_ms": 0.72,
+      "p95_ms": 1.27,
+      "max_ms": 1.33,
+      "elapsed_s": 0.003,
+      "successful_ops_per_s": 354.95,
+      "winner_count": 1,
+      "winner_actors": [
+        "benchmark-0"
+      ],
+      "loss_count": 7,
+      "latency_sample_count": 8,
+      "latency_population": "all claim attempts, including conflicts"
+    }
+  },
+  "checks": {
+    "exactly_one_claim_winner": true,
+    "cross_tenant_isolation": true,
+    "all_read_write_requests_succeeded": true,
+    "cleanup": "passed"
+  },
+  "aggregation_note": "The original raw output serialization had an aggregation bug: atomic_claims.successes counted all latency samples. The raw companion was not retained and no exact saved copy remains. This corrected report counts 8 requests, 1 winner and 7 conflicts. Claim latency percentiles still use all 8 attempts.",
+  "background_load_conditions": "Not captured contemporaneously. Demo video artifact timestamps are within about one minute of this run, so encoding may have overlapped; treat background load as uncontrolled. No ffmpeg/recorder process was running when checked later."
+}
